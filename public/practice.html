@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Practice LLD</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="navbar">
+    <h1>LLD Practice</h1>
+    <p>Design. Practice. Improve.</p>
+  </header>
+
+  <main class="container">
+
+    <a href="/" class="back-link">← Back to Problems</a>
+
+    <!-- Problem Details -->
+    <section id="problem-details" class="problem-details">
+      <p>Loading problem...</p>
+    </section>
+
+    <!-- Practice Form -->
+    <section class="practice-section">
+
+      <h2>Your Design</h2>
+
+      <p class="section-description">
+        Explain your design, responsibilities, relationships, and
+        important decisions.
+      </p>
+
+      <form id="practice-form">
+
+        <label for="classes">Classes</label>
+        <textarea
+          id="classes"
+          placeholder="Example: Vehicle, ParkingSpot, ParkingLot..."
+          required
+        ></textarea>
+
+        <label for="responsibilities">Responsibilities</label>
+        <textarea
+          id="responsibilities"
+          placeholder="What does each class do?"
+          required
+        ></textarea>
+
+        <label for="relationships">Relationships</label>
+        <textarea
+          id="relationships"
+          placeholder="How are the classes connected?"
+          required
+        ></textarea>
+
+        <label for="key_methods">Key Methods</label>
+        <textarea
+          id="key_methods"
+          placeholder="Example: parkVehicle(), removeVehicle()..."
+          required
+        ></textarea>
+
+        <label for="design_decisions">Design Decisions</label>
+        <textarea
+          id="design_decisions"
+          placeholder="Why did you choose this design?"
+          required
+        ></textarea>
+
+        <label for="edge_cases">Edge Cases</label>
+        <textarea
+          id="edge_cases"
+          placeholder="What happens in unusual situations?"
+          required
+        ></textarea>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+
+          <button type="submit" class="submit-button">
+            Submit Design
+          </button>
+
+          <button
+            type="button"
+            id="history-toggle"
+            class="secondary-button"
+          >
+            Previous Attempts
+          </button>
+
+        </div>
+
+      </form>
+
+      <p id="submit-message"></p>
+
+      <!-- Feedback -->
+      <div id="feedback-container"></div>
+
+      <!-- History: hidden by default -->
+      <div id="history-container" class="history-container hidden"></div>
+
+    </section>
+
+  </main>
+
+  <!-- View Design Modal -->
+  <div id="design-modal" class="design-modal hidden">
+    <div id="feedback-container" class="feedback-container hidden"></div>
+
+    <div class="design-modal-content">
+
+      <button
+        type="button"
+        id="close-design-modal"
+        class="close-modal"
+      >
+        ×
+      </button>
+
+      <div id="design-view"></div>
+
+    </div>
+
+  </div>
+
+  <script src="practice.js"></script>
+
+</body>
+</html>
