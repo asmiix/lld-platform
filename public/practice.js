@@ -12,7 +12,7 @@ const feedbackContainer = document.getElementById("feedback-container");
 
 async function loadProblem() {
   try {
-    const response = await fetch(`/api/problems/${problemId}`);
+    const response = await fetch(`https://lld-platform-3wmf.onrender.com/api/problems/${problemId}`);
     const problem = await response.json();
 
     problemDetails.innerHTML = `
@@ -111,7 +111,7 @@ fields.forEach((fieldId) => {
 async function loadHistory() {
   try {
     const response = await fetch(
-      `/api/submissions/problem/${problemId}`
+      `https://lld-platform-3wmf.onrender.com/api/submissions/problem/${problemId}`
     );
 
     const submissions = await response.json();
@@ -186,7 +186,7 @@ historyToggle.addEventListener("click", () => {
 
 async function viewAttempt(id) {
   try {
-    const response = await fetch(`/api/submissions/${id}`);
+    const response = await fetch(`https://lld-platform-3wmf.onrender.com/api/submissions/${id}`);
     const submission = await response.json();
 
     const modal = document.getElementById("design-modal");
@@ -275,7 +275,7 @@ practiceForm.addEventListener("submit", async (event) => {
   };
 
   try {
-    const response = await fetch("/api/submissions", {
+    const response = await fetch("https://lld-platform-3wmf.onrender.com/api/submissions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

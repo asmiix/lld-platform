@@ -2,7 +2,7 @@ const problemsContainer = document.getElementById("problems-container");
 
 async function loadProblems() {
   try {
-    const response = await fetch("/api/problems");
+    const response = await fetch("https://lld-platform-3wmf.onrender.com/api/problems");
     const problems = await response.json();
 
     problemsContainer.innerHTML = problems
