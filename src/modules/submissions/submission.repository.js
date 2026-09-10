@@ -100,9 +100,18 @@ function getSubmissionsByProblemId(problemId) {
   `).all(problemId);
 }
 
+function updateSubmissionStatus(id, status) {
+  db.prepare(`
+    UPDATE submissions
+    SET status = ?
+    WHERE id = ?
+  `).run(status, id);
 
+  return getSubmissionById(id);
+}
 module.exports = {
   createSubmission,
   getSubmissionById,
-  getSubmissionsByProblemId
+  getSubmissionsByProblemId,
+  updateSubmissionStatus
 };
